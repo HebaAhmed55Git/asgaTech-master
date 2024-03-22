@@ -18,7 +18,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class ProductsComponent implements OnInit {
 
-  productsList!:Product[];
+  productsList:Product[]=[];
   userTerm:string="";
 /*====================== Carousel configurations ================*/
   customOptions: OwlOptions = {
@@ -52,11 +52,12 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     this._ProductsService.getProducts().subscribe({
-      next : (res)=>{
+      next : (res:any)=>{
           this.productsList = res;
       },
-      error : (err)=>{console.log(err)},
+      error : (err:any)=>{console.log(err)},
       complete:()=>{console.log("Done")}
     })
     
