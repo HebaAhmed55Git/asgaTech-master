@@ -1,1 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+/*======================== owl-carousel slider ==========================*/
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+/*=========== get external font family from gooogle fonts ============*/
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+
+/* ===================== map for coloring ==================*/
+
+$color:(
+    "main-color":#0E67CD,
+    "light-color": #f0f3f2,
+    "shadow" : rgba(145,158,171,.2),
+    "rating-color" :  #ffc908
+);
+
+/* ====================== scss vars ======================= */
+$main-color:map-get($map:$color , $key:"main-color" );
+$light-color:map-get($map:$color , $key:"light-color" );
+$shadow: map-get($map:$color , $key:"shadow" ) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+$font-family:'Encode Sans Expanded', sans-serif;
+$rating-color:map-get($map:$color , $key:"rating-color");
+
+/* ================== coloring classes ===========================*/
+@each $key,$value in $color
+{
+    .bg-#{$key}
+    {
+        background-color: #{$value} !important;
+    }
+    .text-#{$key}
+    {
+        color: #{$value} !important;
+    }
+}
+
+// * =================================== */
+
+body{
+    font-family: $font-family !important;
+}
+
+/* ================== styling scrollbar ============*/
+::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: $light-color;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: $main-color;
+    border-radius: 30px;
+}
+
+/* ================== classes used in several pages ============*/
+.rating-color
+{
+    color: $rating-color;
+}
+.cursor-pointer
+{
+    cursor: pointer;
+}
+a 
+{
+    &:hover
+    {
+        color: $main-color;
+        text-decoration: underline;
+    }
+    color: black;
+    text-decoration: none;
+}
+/*======================== sizing classes ========================*/
+.w-3
+{
+    width:3%;
+}
+.w-10
+{
+    width: 10%;
+}
+.w-7
+{
+    width: 7%;
+}
+.font-sm
+{
+    font-size: 14px;
+}
+
