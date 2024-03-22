@@ -1,0 +1,33 @@
+// ==================== product page classes =====================================
+.product  
+{
+    > .btn
+    {
+        transition: transform 1s , opacity 1s;
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    > span
+    {
+        transform: skewX(20deg) translateX(0.25rem);
+    }
+    > img
+    {
+        transition: 0.2s;
+    }
+    &:hover
+    {
+        .btn 
+        {
+            opacity: 1;
+            transform: translateY(0%);
+        
+        }
+        img
+        {
+            border-radius: 0px !important;
+        }
+    }
+    
+    
+}

@@ -1,0 +1,39 @@
+
+<!-- ======================= Owl Carousel ===================================-->
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let product of productsList;trackBy:prodTrackByFn">
+      <ng-template carouselSlide>
+        <img [src]="product.ProductImg" [alt]="product.ProductName" [title]="product.ProductName">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+
+
+<!-- ======================== serach input ============================ -->
+
+<input [(ngModel)]="userTerm" class="form-control w-50 my-3 mx-auto" placeholder="Search Product Name...">
+
+<div class="container">
+    <div class="row gy-3 gx-5">
+        <!-- use trackBy in ngFor to avoid re-build DOM when the product list changed
+             trackBy inhanced our app performance -->
+        <div *ngFor="let product of productsList|searchItem:userTerm; trackBy:prodTrackByFn" class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-12">
+            <div class="product position-relative overflow-hidden" >
+                <img class="img-fluid rounded-bottom-circle" [src]="product.ProductImg" [alt]="product.ProductName" [title]="product.ProductName">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="h5">{{product.ProductName}}</h2>
+                        <p>
+                            <span [highlight]="product.AvailablePieces">Available Pieces</span> : {{product.AvailablePieces}}
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long text-muted cursor-pointer"></i>
+                </div>
+                <span class="position-absolute top-0 end-0 h6 px-2 bg-main-color text-light-color">{{product.ProductPrice}}EGP</span>
+                <!-- <button class="btn bg-main-color text-light-color d-block w-100">Add To Cart</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
