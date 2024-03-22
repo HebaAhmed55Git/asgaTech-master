@@ -11,16 +11,9 @@ export class GetPricePipe implements PipeTransform {
   prodPrice!:number;
   constructor(private _ProductsService:ProductsService){}
 
-  transform(prodIndex:number , prodQuantity:number):number {
+  transform(prodIndex:number , prodQuantity:number):void {
     
-    this._ProductsService.getSpecificProduct(prodIndex).subscribe({
-      next : (res:Product)=>{
-       this.prodPrice =   res.ProductPrice * prodQuantity
-      }
-    })
 
-
-    return this.prodPrice;
   }
 
 }
