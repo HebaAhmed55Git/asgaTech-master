@@ -28,7 +28,7 @@
                             <span [highlight]="product.AvailablePieces">Available Pieces</span> : {{product.AvailablePieces}}
                         </p>
                     </div>
-                    <i class="fa-solid fa-arrow-right-long text-muted cursor-pointer"></i>
+                    <i [routerLink]="['/productDetails',product.ProductId]" class="fa-solid fa-arrow-right-long text-muted cursor-pointer"></i>
                 </div>
                 <span class="position-absolute top-0 end-0 h6 px-2 bg-main-color text-light-color">{{product.ProductPrice}}EGP</span>
                 <!-- <button class="btn bg-main-color text-light-color d-block w-100">Add To Cart</button> -->

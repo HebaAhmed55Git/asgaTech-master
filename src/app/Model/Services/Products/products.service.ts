@@ -11,13 +11,18 @@ export class ProductsService {
   private productsUrl!:string;
 
   constructor(private _HttpClient:HttpClient) { 
-    this.productsUrl = "./assets/Data/products.json";
+    this.productsUrl = "http://localhost:3000/products";
 
   }
 
   getProducts():Observable<Product[]>
   {
     return this._HttpClient.get<Product[]>(this.productsUrl);
+  }
+
+  getSpecificProduct(prodId:string|null)
+  {
+    return this._HttpClient.get<Product[]>(`${this.productsUrl}?ProductId=${prodId}`);
   }
 
 }
