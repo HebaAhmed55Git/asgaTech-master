@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path:'' , redirectTo : "products" , pathMatch:"full"},
   {path:'products' ,loadComponent:()=>import("./Layout/products/products.component").then(m=>m.ProductsComponent),title:"Products"},
+  {path:'productDetails/:id' ,loadComponent:()=>import("./Layout/product-details/product-details.component").then(m=>m.ProductDetailsComponent),title:"Product Details"},
   {path:'orders' ,loadComponent:()=>import("./Layout/orders/orders.component").then(m=>m.OrdersComponent),title:"Ordres"},
   {path:'customers' ,loadComponent:()=>import("./Layout/customers/customers.component").then(m=>m.CustomersComponent),title:"Customers"},
 ];

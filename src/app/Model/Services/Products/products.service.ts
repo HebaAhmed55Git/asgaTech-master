@@ -20,7 +20,7 @@ export class ProductsService {
     return this._HttpClient.get<Product[]>(this.productsUrl);
   }
 
-  getSpecificProduct(prodId:number):Observable<Product[]>
+  getSpecificProduct(prodId:string|null):Observable<Product[]>
   {
      return this._HttpClient.get<Product[]>(`${this.productsUrl}?ProductId=${prodId}`)
   }

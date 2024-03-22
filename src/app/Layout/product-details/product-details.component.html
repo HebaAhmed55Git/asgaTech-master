@@ -1,0 +1,16 @@
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="productData?.ProductImg" class="img-fluid">
+        </div>
+        <div class="col-md-8 d-flex justify-content-center flex-column">
+            <ng-container>
+                <h2 class="h3">{{productData?.ProductName}}</h2>
+                <p><span class="text-main-color">Available Pieces : </span>{{productData?.AvailablePieces}}</p>
+                <p><span class="text-main-color">Price : </span>{{productData?.ProductPrice}}EGP</p>
+            </ng-container>
+        </div>
+    </div>
+</div>
