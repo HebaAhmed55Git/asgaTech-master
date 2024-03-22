@@ -1,2 +1,19 @@
-<p>orders works!</p>
-<h1>Heba Ahmed</h1>
+<div class="container py-5">
+    <div class="row gy-3 gx-5">
+        <!-- use trackBy in ngFor to avoid re-build DOM when the product list changed
+             trackBy inhanced our app performance -->
+        <div *ngFor="let order of ordersList;let i = index" class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-12">
+            <div class="product position-relative overflow-hidden" >
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-center">
+                        <img class="w-25 rounded-circle" src="assets/images/order.jpg">
+                        <h3>Order{{i+1}}</h3>
+                        <h2 class="h5">{{order.PaymentType}}</h2>
+                        <button class="btn bg-main-color text-light-color w-75">More Details</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
