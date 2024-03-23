@@ -3,9 +3,9 @@
 export interface Order
 {
     
-        OrderId: number,
+        OrderId: string,
         OrderDate: Date,
-        UserId: number,
+        UserId: string,
         Products: productQ[],
         PaymentType: string
 
