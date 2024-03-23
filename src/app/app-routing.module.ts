@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotfoundComponent } from './Layout/notfound/notfound.component';
 
 const routes: Routes = [
   {path:'' , redirectTo : "products" , pathMatch:"full"},
@@ -8,6 +9,7 @@ const routes: Routes = [
   {path:'orders' ,loadComponent:()=>import("./Layout/orders/orders.component").then(m=>m.OrdersComponent),title:"Ordres"},
   {path:'customers' ,loadComponent:()=>import("./Layout/customers/customers.component").then(m=>m.CustomersComponent),title:"Customers"},
   {path:'orderDetails/:id' ,loadComponent:()=>import("./Layout/order-details/order-details.component").then(m=>m.OrderDetailsComponent),title:"Order Details"},
+  {path:'**' , component:NotfoundComponent},
 ];
 
 @NgModule({
