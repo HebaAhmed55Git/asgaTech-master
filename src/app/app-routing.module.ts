@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:'productDetails/:id' ,loadComponent:()=>import("./Layout/product-details/product-details.component").then(m=>m.ProductDetailsComponent),title:"Product Details"},
   {path:'orders' ,loadComponent:()=>import("./Layout/orders/orders.component").then(m=>m.OrdersComponent),title:"Ordres"},
   {path:'customers' ,loadComponent:()=>import("./Layout/customers/customers.component").then(m=>m.CustomersComponent),title:"Customers"},
+  {path:'orderDetails/:id' ,loadComponent:()=>import("./Layout/order-details/order-details.component").then(m=>m.OrderDetailsComponent),title:"Order Details"},
 ];
 
 @NgModule({

@@ -10,12 +10,18 @@ export class CustomersService {
   private customersUrl!:string;
 
   constructor(private _HttpClient:HttpClient) { 
-    this.customersUrl = "./assets/Data/users.json";
-
+    // this.customersUrl = "./assets/Data/users.json";
+    this.customersUrl = "http://localhost:3000/Users";
   }
 
   getCustomers():Observable<Customer[]>
   {
     return this._HttpClient.get<Customer[]>(this.customersUrl);
   }
+
+  getSpecificUser(userId:string|null):Observable<Customer[]>
+  {
+    return this._HttpClient.get<Customer[]>(`${this.customersUrl}?Id=${userId}`);
+  }
+
 }

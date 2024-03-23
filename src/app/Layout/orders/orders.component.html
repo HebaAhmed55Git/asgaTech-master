@@ -9,9 +9,10 @@
                         <img class="w-25 rounded-circle" src="assets/images/order.jpg">
                         <h3>Order{{i+1}}</h3>
                         <h2 class="h5">{{order.PaymentType}}</h2>
-                        <button class="btn bg-main-color text-light-color w-75">More Details</button>
+                        <h2 class="h5">{{order.Products|getPrice}}</h2>
+                        
+                        <button [routerLink]="['/orderDetails' ,order.OrderId]" routerLinkActive="router-link-active"  class="btn bg-main-color text-light-color w-75">More Details</button>
                     </div>
-                    
                 </div>
             </div>
         </div>
